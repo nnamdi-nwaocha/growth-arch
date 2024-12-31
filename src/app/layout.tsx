@@ -25,11 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <link
-        rel="shortcut icon"
-        href="./icons/favicon.png"
-        type="image/x-icon"
-      />
+      <link rel="shortcut icon" href="/forex_banner.webp" type="image/x-icon" />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased text-[#000]`}
       >
