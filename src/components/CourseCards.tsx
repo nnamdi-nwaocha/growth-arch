@@ -3,7 +3,7 @@
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useSwipe } from "@/app/hooks/useSwipe";
+import { useSwipe } from "../hooks/useSwipe";
 
 export default function CourseCards() {
   const scrollRef = useRef<HTMLDivElement>(null);

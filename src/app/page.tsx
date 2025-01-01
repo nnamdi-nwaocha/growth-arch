@@ -1,7 +1,6 @@
-import { Features } from "@/components/Features";
-import Hero from "@/components/Hero";
-import NavBar from "@/components/Navbar";
-
+import NavBar from "../components/Navbar";
+import Hero from "../components/Hero";
+import { Features } from "../components/Features";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
