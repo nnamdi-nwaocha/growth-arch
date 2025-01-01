@@ -1,5 +1,4 @@
 import Link from "next/link";
-import CountUp from "react-countup";
 import StatsCounter from "./StatsCounter";
 import Divider from "./Divider";
 
