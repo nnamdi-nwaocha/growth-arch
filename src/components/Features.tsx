@@ -8,6 +8,7 @@ import {
   IconMessageCircle,
   IconHeartHandshake,
   IconBulb,
+  IconMoneybag,
 } from "@tabler/icons-react";
 import Marquee from "react-fast-marquee";
 
@@ -27,13 +28,13 @@ export function Features() {
     {
       title: "Interactive Workshops",
       description:
-        "Engage in hands-on learning experiences with guided workshops.",
+        "Engage in hands-on learniksng experiences with guided workshops.",
       icon: <IconSchool color="#FFB200" />,
     },
     {
-      title: "Event Scheduling",
-      description: "Plan and organize learning events seamlessly.",
-      icon: <IconCalendarEvent color="#FFB200" />,
+      title: "Get Paid to Teach",
+      description: "Earn by sharing your skills and expertise with others.",
+      icon: <IconMoneybag color="#FFB200" />,
     },
     {
       title: "Community Support",
@@ -58,6 +59,7 @@ export function Features() {
       icon: <IconBook color="#FFB200" />,
     },
   ];
+
   // this you nigga
   return (
     <div className="py-10 bg-white">

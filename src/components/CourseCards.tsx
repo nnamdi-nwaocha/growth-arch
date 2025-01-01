@@ -64,20 +64,23 @@ export default function CourseCards() {
           <CourseCard
             title="Guide to Frontend Development"
             image="/frontend_banner.webp"
-            teacherName="John Doe"
+            teacherName="Chinedu Okeke"
             sessionTimes="Mon & Wed, 6 PM - 8 PM"
+            teacherpfp="/pfp1.png"
           />
           <CourseCard
             title="Introduction to Technical Writing"
             image="/technical_writing_banner.webp"
-            teacherName="Jane Smith"
+            teacherName="Amina Bello"
             sessionTimes="Tue & Thu, 4 PM - 6 PM"
+            teacherpfp="/pfp2.png"
           />
           <CourseCard
             title="Forex and Crypto Trading"
             image="/forex_banner.webp"
-            teacherName="Alex Johnson"
+            teacherName="Emeka Eze"
             sessionTimes="Fri, 5 PM - 7 PM"
+            teacherpfp="/pfp3.png"
           />
         </div>
       </div>
@@ -90,6 +93,7 @@ interface CourseCardProps {
   image: string;
   teacherName: string;
   sessionTimes: string;
+  teacherpfp: string;
 }
 
 function CourseCard({
@@ -97,18 +101,19 @@ function CourseCard({
   image,
   teacherName,
   sessionTimes,
+  teacherpfp,
 }: CourseCardProps) {
   return (
     <div className="flex-none w-[calc(100%-2rem)] sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)] whitespace-normal">
       <div className="overflow-hidden bg-white rounded shadow-xl h-full flex flex-col">
         <div className="relative h-48">
-          <Image src={image} alt={title} layout="fill" objectFit="cover" />
+          <Image src={image} alt={title} fill style={{ objectFit: "cover" }} />
         </div>
         <div className="p-8 flex flex-col flex-grow">
           <p className="text-lg font-bold text-gray-900">{title}</p>
           <div className="flex items-center mt-4 space-x-4">
             <Image
-              src="/icons/user-icon-placeholder.svg"
+              src={teacherpfp}
               alt={teacherName}
               width={40}
               height={40}

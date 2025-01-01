@@ -24,13 +24,22 @@ export function Nav() {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
             <li>
-              <a>Homepage</a>
-            </li>
-            <li>
-              <a>Portfolio</a>
+              <a>Pricing</a>
             </li>
             <li>
               <a>About</a>
+            </li>
+            <li>
+              <a>Features</a>
+            </li>
+            <li>
+              <a>How It Works</a>
+            </li>
+            <li>
+              <a>FAQ</a>
+            </li>
+            <li>
+              <a>Contact</a>
             </li>
           </ul>
         </div>

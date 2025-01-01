@@ -30,7 +30,7 @@ export function Intro() {
 
   return (
     <section>
-      <div className="relative py-12 overflow-hidden bg-gray-100 sm:py-16 lg:pb-20 pt-15 xl:py-14">
+      <div className="relative py-12 overflow-hidden bg-gray-100 sm:py-16 lg:pb-20 lg:pt-9 xl:pb-14 xl:pt-5">
         <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
           <div className="flex flex-col">
             <HeroContent isVisible={isVisible} cardRef={cardRef} />

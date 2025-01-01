@@ -2,6 +2,7 @@ import { Nav } from "../components/Nav";
 import { Intro } from "../components/Intro";
 import { Features } from "../components/Features";
 import type { Metadata } from "next";
+import CallToAction from "../components/CallToAction";
 
 export const metadata: Metadata = {
   title: "Growth Arc - Learn and Teach Skills",
@@ -17,6 +18,7 @@ export default function Home() {
       <Nav />
       <Intro />
       <Features />
+      <CallToAction />
     </>
   );
 }
