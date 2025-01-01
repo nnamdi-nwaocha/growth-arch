@@ -58,7 +58,7 @@ export function Features() {
       icon: <IconBook color="#FFB200" />,
     },
   ];
-
+  // this you nigga
   return (
     <div className="py-10 bg-white">
       <h2 className="text-center text-3xl font-bold mb-6 text-neutral-800">
