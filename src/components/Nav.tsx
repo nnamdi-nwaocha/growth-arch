@@ -1,4 +1,4 @@
-function NavBar() {
+export function Nav() {
   return (
     <div className="navbar overflow-xhidden bg-base-100">
       <div className="navbar-start">
@@ -47,5 +47,3 @@ function NavBar() {
     </div>
   );
 }
-
-export default NavBar;

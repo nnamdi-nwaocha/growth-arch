@@ -1,5 +1,5 @@
-import { NavBar } from "../components/Navbar";
-import { Hero } from "../components/Hero";
+import { Nav } from "../components/Nav";
+import { Intro } from "../components/Intro";
 import { Features } from "../components/Features";
 import type { Metadata } from "next";
 
@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <NavBar />
-      <Hero />
+      <Nav />
+      <Intro />
       <Features />
     </>
   );

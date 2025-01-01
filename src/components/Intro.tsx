@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import HeroContent from "./HeroContent";
 import CourseCards from "./CourseCards";
 
-export default function Hero() {
+export function Intro() {
   const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef<HTMLDivElement | null>(null);
 
