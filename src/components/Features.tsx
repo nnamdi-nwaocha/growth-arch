@@ -4,7 +4,6 @@ import {
   IconUsers,
   IconBroadcast,
   IconSchool,
-  IconCalendarEvent,
   IconMessageCircle,
   IconHeartHandshake,
   IconBulb,

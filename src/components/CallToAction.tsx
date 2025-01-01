@@ -15,8 +15,9 @@ const CallToAction = () => {
             />
             <blockquote>
               <p className="mt-6 text-xl leading-relaxed text-black">
-                “Growth Arc helped me turn my passion into income. It's more
-                than a platform—it's a movement.”
+                &ldquo;Growth Arc helped me turn my passion into income.
+                It&apos;s more than a platform&mdash;it&apos;s a
+                movement.&rdquo;
               </p>
             </blockquote>
             <p className="mt-6 text-base font-semibold text-black">
