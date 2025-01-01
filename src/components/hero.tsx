@@ -256,11 +256,11 @@ const Hero = () => {
                           Guide to Frontend Development
                         </p>
                         <p className="mt-6 text-xs font-medium tracking-widest text-gray-500 uppercase">
-                          Course Price
+                          Session Times
                         </p>
                         <div className="flex items-end mt-1">
                           <p className="text-lg font-bold text-gray-900">
-                            $49.99
+                            Mon & Wed, 6 PM - 8 PM
                           </p>
                         </div>
                         <div className="grid grid-cols-2 mt-7 gap-x-4">
@@ -299,11 +299,11 @@ const Hero = () => {
                           Introduction to Technical Writing
                         </p>
                         <p className="mt-6 text-xs font-medium tracking-widest text-gray-500 uppercase">
-                          Course Price
+                          Session Times
                         </p>
                         <div className="flex items-end mt-1">
                           <p className="text-lg font-bold text-gray-900">
-                            $39.99
+                            Tue & Thu, 4 PM - 6 PM
                           </p>
                         </div>
                         <div className="grid grid-cols-2 mt-7 gap-x-4">
@@ -342,11 +342,11 @@ const Hero = () => {
                           Forex and Crypto Trading
                         </p>
                         <p className="mt-6 text-xs font-medium tracking-widest text-gray-500 uppercase">
-                          Course Price
+                          Session Times
                         </p>
                         <div className="flex items-end mt-1">
                           <p className="text-lg font-bold text-gray-900">
-                            $29.99
+                            Fri, 5 PM - 7 PM
                           </p>
                         </div>
                         <div className="grid grid-cols-2 mt-7 gap-x-4">
