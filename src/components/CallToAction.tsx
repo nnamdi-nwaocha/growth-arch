@@ -1,4 +1,4 @@
-import React from "react";
+import Image from "next/image";
 
 const CallToAction = () => {
   return (
@@ -6,10 +6,12 @@ const CallToAction = () => {
       <div className="max-w-5xl px-4 mx-auto sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-24 gap-y-10">
           <div>
-            <img
-              className="object-cover w-16 h-16 rounded-full"
+            <Image
               src="/pfp4.png"
               alt="Profile"
+              width={64} // Width in pixels
+              height={64} // Height in pixels
+              className="object-cover rounded-full"
             />
             <blockquote>
               <p className="mt-6 text-xl leading-relaxed text-black">
