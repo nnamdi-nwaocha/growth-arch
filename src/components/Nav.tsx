@@ -27,15 +27,6 @@ export function Nav() {
               <a>Pricing</a>
             </li>
             <li>
-              <a>About</a>
-            </li>
-            <li>
-              <a>Features</a>
-            </li>
-            <li>
-              <a>How It Works</a>
-            </li>
-            <li>
               <a>FAQ</a>
             </li>
             <li>
