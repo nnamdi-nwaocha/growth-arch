@@ -27,7 +27,7 @@ export function Features() {
     {
       title: "Interactive Workshops",
       description:
-        "Engage in hands-on learniksng experiences with guided workshops.",
+        "Engage in hands-on learning experiences with guided workshops.",
       icon: <IconSchool color="#FFB200" />,
     },
     {
