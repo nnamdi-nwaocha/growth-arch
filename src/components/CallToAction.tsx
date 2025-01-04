@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const CallToAction = () => {
   return (
@@ -38,14 +39,11 @@ const CallToAction = () => {
                   know.
                 </p>
 
-                <a
-                  href="#"
-                  title="Sign Up Now"
-                  className="flex items-center justify-center w-full px-4 py-4 mt-8 text-base font-semibold text-black transition-all duration-200 bg-[#FFB200] border-2 border-transparent rounded-md hover:bg-black hover:text-white focus:bg-black focus:text-white"
-                  role="button"
-                >
-                  Sign Up Now
-                </a>
+                <Link href="/signup">
+                  <button className="flex items-center justify-center w-full px-4 py-4 mt-8 text-base font-semibold text-black transition-all duration-200 bg-[#FFB200] border-2 border-transparent rounded-md hover:bg-black hover:text-white focus:bg-black focus:text-white">
+                    Signup
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
