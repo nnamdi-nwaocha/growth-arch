@@ -16,7 +16,13 @@ export async function POST(request: Request) {
             },
         });
 
-        const data = await response.json();
+        const text = await response.text();
+        let data;
+        try {
+            data = JSON.parse(text);
+        } catch {
+            data = { message: text || 'Unknown error occurred' };
+        }
 
         if (response.ok) {
             return NextResponse.json({ message: 'Email confirmed successfully' });
