@@ -39,7 +39,7 @@ export default function Login() {
         const data = await response.json();
         setError(data.message || "Failed to confirm email");
       }
-    } catch (err) {
+    } catch (_err) {
       setError("An error occurred while confirming your email");
     } finally {
       setIsLoading(false);
@@ -146,7 +146,7 @@ export default function Login() {
               href="/signup"
               className="font-medium text-yellow-600 hover:text-yellow-500"
             >
-              Don't have an account? Sign up
+              Don&apos;t have an account? Sign up
             </Link>
           </div>
         </div>
