@@ -12,7 +12,6 @@ export default function Login() {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [confirmationMessage, setConfirmationMessage] = useState("");
-  // const [token, setToken] = useState<string>("");
   const [message, setMessage] = useState<string | null>(null);
   const router = useRouter();
 
@@ -23,7 +22,6 @@ export default function Login() {
       const messageParam = params.get("message");
 
       if (tokenParam) {
-        // setToken(tokenParam);
         await confirmEmail(tokenParam);
       }
 
@@ -47,10 +45,7 @@ export default function Login() {
           "Your email has been successfully confirmed. You can now log in."
         );
       } else {
-        const text = await response.text();
-        const data = text
-          ? JSON.parse(text)
-          : { message: "Failed to confirm email" };
+        const data = await response.json();
         setError(data.message || "Failed to confirm email");
       }
     } catch (err) {
