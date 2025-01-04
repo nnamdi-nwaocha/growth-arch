@@ -24,7 +24,7 @@ export default function Login() {
 
       if (tokenParam) {
         setToken(tokenParam);
-        await confirmEmail(tokenParam);
+        await confirmEmail(token);
       }
 
       if (messageParam) {
