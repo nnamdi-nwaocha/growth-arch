@@ -2,6 +2,15 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Your Profile - Growth Arc",
+  description: "An interactive platform to learn and teach skills effectively.",
+  icons: {
+    icon: "/icons/favicon.png", // Path relative to the public folder
+  },
+};
 
 interface UserProfile {
   email: string;
