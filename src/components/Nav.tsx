@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function Nav() {
   return (
     <div className="navbar overflow-xhidden bg-base-100">
@@ -41,8 +43,12 @@ export function Nav() {
         </a>
       </div>
       <div className="navbar-end">
-        <button className="btn btn-ghost rounded-lg">Login</button>
-        <button className="btn btn-ghost rounded-lg">Singup</button>
+        <Link href="/login">
+          <button className="btn btn-ghost rounded-lg">Login</button>
+        </Link>
+        <Link href="/signup">
+          <button className="btn btn-ghost rounded-lg">Signup</button>
+        </Link>
       </div>
     </div>
   );
