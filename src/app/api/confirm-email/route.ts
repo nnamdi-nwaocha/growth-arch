@@ -3,6 +3,7 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
     try {
         const { token } = await request.json();
+        console.log(token)
         const result = await fetch('https://growth-arc-backend.onrender.com/auth/confirm-email', {
             method: 'POST',
             headers: {
@@ -15,6 +16,7 @@ export async function POST(request: Request) {
             return NextResponse.json({ message: 'Email confirmed successfully' });
         } else {
             const errorData = await result.json();
+            console.log(errorData)
             return NextResponse.json({ message: errorData.message || 'Email confirmation failed' }, { status: result.status });
         }
     } catch (error) {
