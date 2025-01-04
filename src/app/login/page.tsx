@@ -12,7 +12,7 @@ export default function Login() {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [confirmationMessage, setConfirmationMessage] = useState("");
-  const [token, setToken] = useState<string | null>(null);
+  const [token, setToken] = useState<string>("");
   const [message, setMessage] = useState<string | null>(null);
   const router = useRouter();
 
@@ -23,7 +23,7 @@ export default function Login() {
 
     if (tokenParam) {
       setToken(tokenParam);
-      confirmEmail(tokenParam);
+      confirmEmail(token);
     }
 
     if (messageParam) {
