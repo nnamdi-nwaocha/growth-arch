@@ -38,10 +38,11 @@ export default function Login() {
   const confirmEmail = async (token: string) => {
     setIsLoading(true);
     try {
-      const response = await fetch("/api/confirm-email", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token }),
+      const response = await fetch(`/api/confirm-email?token=${token}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
       });
       if (response.ok) {
         setConfirmationMessage(
