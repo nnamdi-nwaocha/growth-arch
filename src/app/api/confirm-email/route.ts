@@ -1,22 +1,24 @@
 import { NextResponse } from 'next/server';
 
-export async function POST(request: Request) {
+export async function GET(request: Request) {
     try {
-        const { token } = await request.json();
-        console.log(token)
-        const result = await fetch('https://growth-arc-backend.onrender.com/auth/confirm-email', {
-            method: 'POST',
+        const { searchParams } = new URL(request.url);
+        const token = searchParams.get('token');
+        if (!token) {
+            return NextResponse.json({ message: 'Token is required' }, { status: 400 });
+        }
+
+        const result = await fetch(`https://growth-arc-backend.onrender.com/auth/confirm-email?token=${token}`, {
+            method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ token }),
         });
 
         if (result.ok) {
             return NextResponse.json({ message: 'Email confirmed successfully' });
         } else {
             const errorData = await result.json();
-            console.log(errorData)
             return NextResponse.json({ message: errorData.message || 'Email confirmation failed' }, { status: result.status });
         }
     } catch (error) {
