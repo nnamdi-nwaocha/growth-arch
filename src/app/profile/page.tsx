@@ -88,7 +88,7 @@ export default function Profile() {
           </div>
           <div className="space-y-4">
             <h3 className="text-xl font-semibold text-gray-900">Bio</h3>
-            <p className="text-gray-600 whitespace-pre-wrap">{profile.bio}</p>
+            <p className="text-gray-600 break-words">{profile.bio}</p>
           </div>
           <div className="pt-6 border-t border-gray-200">
             <button

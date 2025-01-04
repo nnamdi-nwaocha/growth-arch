@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function Login() {
@@ -12,16 +12,24 @@ export default function Login() {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [confirmationMessage, setConfirmationMessage] = useState("");
+  const [token, setToken] = useState<string | null>(null);
+  const [message, setMessage] = useState<string | null>(null);
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const token = searchParams.get("token");
-  const message = searchParams.get("message");
 
   useEffect(() => {
-    if (token) {
-      confirmEmail(token);
+    const params = new URLSearchParams(window.location.search);
+    const tokenParam = params.get("token");
+    const messageParam = params.get("message");
+
+    if (tokenParam) {
+      setToken(tokenParam);
+      confirmEmail(tokenParam);
     }
-  }, [token]);
+
+    if (messageParam) {
+      setMessage(messageParam);
+    }
+  }, []);
 
   const confirmEmail = async (token: string) => {
     setIsLoading(true);
