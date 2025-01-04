@@ -3,7 +3,9 @@ import { NextResponse } from 'next/server';
 export async function POST(request: Request) {
     try {
         const body = await request.json();
-        const result = await fetch('https://growth-arc-backend.onrender.com/auth/login', {
+
+        const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+        const result = await fetch(`${backendUrl}/auth/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

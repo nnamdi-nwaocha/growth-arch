@@ -2,7 +2,8 @@ import { NextResponse } from 'next/server';
 
 export async function GET(request: Request) {
     try {
-        const response = await fetch('https://growth-arc-backend.onrender.com/users', {
+        const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+        const response = await fetch(`${backendUrl}/users`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

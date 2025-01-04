@@ -1,15 +1,16 @@
 import { NextResponse } from 'next/server';
 
-export async function POST(request: Request) {
+export async function GET(request: Request) {
     try {
-        const body = await request.json();
-        const { token } = body;
+        const { searchParams } = new URL(request.url);
+        const token = searchParams.get('token');
 
         if (!token) {
             return NextResponse.json({ message: 'Token is required' }, { status: 400 });
         }
 
-        const response = await fetch(`https://growth-arc-backend.onrender.com/auth/confirm-email?token=${encodeURIComponent(token)}`, {
+        const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+        const response = await fetch(`${backendUrl}/auth/confirm-email?token=${encodeURIComponent(token)}`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -30,8 +31,8 @@ export async function POST(request: Request) {
             console.error('Email confirmation failed:', data);
             return NextResponse.json({ message: data.message || 'Email confirmation failed' }, { status: response.status });
         }
-    } catch (err) {
-        console.error('Email confirmation error:', err);
+    } catch (error) {
+        console.error('Email confirmation error:', error);
         return NextResponse.json({ message: 'Internal Server Error' }, { status: 500 });
     }
 }
