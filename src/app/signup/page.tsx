@@ -3,15 +3,6 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Sign up for Growth Arc",
-  description: "An interactive platform to learn and teach skills effectively.",
-  icons: {
-    icon: "/icons/favicon.png", // Path relative to the public folder
-  },
-};
 
 export default function SignUp() {
   const [formData, setFormData] = useState({
