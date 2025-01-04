@@ -14,6 +14,7 @@ export default function SignUp() {
     bio: "",
   });
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const [passwordError, setPasswordError] = useState("");
   const router = useRouter();
 
@@ -27,6 +28,7 @@ export default function SignUp() {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
+    setIsLoading(true);
     e.preventDefault();
     setError("");
     setPasswordError("");
@@ -58,6 +60,8 @@ export default function SignUp() {
     } catch (_err) {
       console.log(_err);
       setError("An error occurred");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -198,7 +202,7 @@ export default function SignUp() {
               type="submit"
               className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
             >
-              Sign up
+              {isLoading ? "Processing..." : "Sign up"}
             </button>
           </form>
           <div className="text-sm text-center">
