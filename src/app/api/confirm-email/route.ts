@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
 
-export async function GET(request: Request) {
+export async function POST(request: Request) {
     try {
-        const { searchParams } = new URL(request.url);
-        const token = searchParams.get('token');
+        const body = await request.json();
+        const token = body.token;
         if (!token) {
             return NextResponse.json({ message: 'Token is required' }, { status: 400 });
         }
