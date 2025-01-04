@@ -40,6 +40,7 @@ export default function Login() {
         setError(data.message || "Failed to confirm email");
       }
     } catch (_err) {
+      console.log(_err);
       setError("An error occurred while confirming your email");
     } finally {
       setIsLoading(false);

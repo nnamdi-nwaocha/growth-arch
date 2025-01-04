@@ -56,6 +56,7 @@ export default function SignUp() {
         setError(data.message || "An error occurred");
       }
     } catch (_err) {
+      console.log(_err);
       setError("An error occurred");
     }
   };
