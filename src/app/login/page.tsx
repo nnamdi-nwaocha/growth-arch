@@ -47,7 +47,10 @@ export default function Login() {
           "Your email has been successfully confirmed. You can now log in."
         );
       } else {
-        const data = await response.json();
+        const text = await response.text();
+        const data = text
+          ? JSON.parse(text)
+          : { message: "Failed to confirm email" };
         setError(data.message || "Failed to confirm email");
       }
     } catch (err) {
