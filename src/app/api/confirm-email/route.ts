@@ -19,6 +19,7 @@ export async function GET(request: Request) {
             return NextResponse.json({ message: 'Email confirmed successfully' });
         } else {
             const errorData = await result.json();
+            console.error('Email confirmation failed:', errorData);
             return NextResponse.json({ message: errorData.message || 'Email confirmation failed' }, { status: result.status });
         }
     } catch (error) {
