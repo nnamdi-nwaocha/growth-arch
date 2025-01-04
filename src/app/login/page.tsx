@@ -12,7 +12,7 @@ export default function Login() {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [confirmationMessage, setConfirmationMessage] = useState("");
-  const [token, setToken] = useState<string>("");
+  // const [token, setToken] = useState<string>("");
   const [message, setMessage] = useState<string | null>(null);
   const router = useRouter();
 
@@ -23,8 +23,8 @@ export default function Login() {
       const messageParam = params.get("message");
 
       if (tokenParam) {
-        setToken(tokenParam);
-        await confirmEmail(token);
+        // setToken(tokenParam);
+        await confirmEmail(tokenParam);
       }
 
       if (messageParam) {
@@ -38,10 +38,9 @@ export default function Login() {
   const confirmEmail = async (token: string) => {
     setIsLoading(true);
     try {
-      const response = await fetch("/api/confirm-email", {
-        method: "POST",
+      const response = await fetch(`/api/confirm-email?token=${token}`, {
+        method: "GET",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token }),
       });
       if (response.ok) {
         setConfirmationMessage(
@@ -51,9 +50,10 @@ export default function Login() {
         const data = await response.json();
         setError(data.message || "Failed to confirm email");
       }
-    } catch (_err) {
-      console.log(_err);
-      setError("An error occurred while confirming your email");
+    } catch (err) {
+      setError(
+        `An error occurred: ${err instanceof Error ? err.message : String(err)}`
+      );
     } finally {
       setIsLoading(false);
     }
