@@ -17,18 +17,22 @@ export default function Login() {
   const router = useRouter();
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const tokenParam = params.get("token");
-    const messageParam = params.get("message");
+    const fetchData = async () => {
+      const params = new URLSearchParams(window.location.search);
+      const tokenParam = params.get("token");
+      const messageParam = params.get("message");
 
-    if (tokenParam) {
-      setToken(tokenParam);
-      confirmEmail(token);
-    }
+      if (tokenParam) {
+        setToken(tokenParam);
+        await confirmEmail(tokenParam);
+      }
 
-    if (messageParam) {
-      setMessage(messageParam);
-    }
+      if (messageParam) {
+        setMessage(messageParam);
+      }
+    };
+
+    fetchData();
   }, []);
 
   const confirmEmail = async (token: string) => {
