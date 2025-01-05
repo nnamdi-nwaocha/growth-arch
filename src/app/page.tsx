@@ -2,7 +2,6 @@ import { Nav } from "../components/Nav";
 import { Intro } from "../components/Intro";
 import { Features } from "../components/Features";
 import CallToAction from "../components/CallToAction";
-import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -11,7 +10,6 @@ export default function Home() {
       <Intro />
       <Features />
       <CallToAction />
-      <Footer />
     </>
   );
 }
